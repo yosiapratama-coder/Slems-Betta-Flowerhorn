@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
+  <meta name="description" content="Slems Betta Flowerhorn — jelajahi keindahan ikan hias Betta dan Flowerhorn.">
+  <title>Slems Betta Flowerhorn | Ornamental Fish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080b10;--panel:#10151d;--panel2:#141c26;--gold:#e6bd74;--gold2:#f6dca2;--text:#f4f1ea;--muted:#a8b0bb;--line:rgba(255,255,255,.1);--red:#d95b51;--blue:#5f9ac8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 80% 0%,rgba(47,94,126,.18),transparent 38%),radial-gradient(ellipse at 10% 55%,rgba(135,49,47,.12),transparent 35%)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .nav{position:fixed;z-index:20;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,6vw,88px);background:rgba(8,11,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:.3s}
+    .nav.scrolled{border-color:var(--line);padding-top:13px;padding-bottom:13px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.11em;font-size:12px}
+    .brand-mark{width:37px;height:37px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:"Playfair Display",serif;font-size:20px}
+    .brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.22em;margin-top:3px;font-weight:500}
+    .nav-links{display:flex;align-items:center;gap:28px;color:#d4d8dd;font-size:12px}
+    .nav-links a{transition:color .2s}.nav-links a:hover{color:var(--gold)}
+    .nav-cta,.btn{border:1px solid var(--gold);border-radius:99px;padding:12px 18px;color:var(--bg);background:var(--gold);font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:transform .25s,background .25s,color .25s;cursor:pointer}
+    .nav-cta:hover,.btn:hover{transform:translateY(-3px);background:var(--gold2)}
+    .btn-outline{background:transparent;color:var(--text);border-color:rgba(255,255,255,.3)}
+    .btn-outline:hover{background:rgba(255,255,255,.08);color:white}
+    .menu-btn{display:none;background:none;color:white;border:0;font-size:24px}
+    .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:130px clamp(20px,8vw,120px) 70px;position:relative;isolation:isolate}
+    .hero-copy{max-width:620px;position:relative;z-index:2}
+    .eyebrow{display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);font-size:10px;font-weight:700;margin-bottom:25px}
+    .eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+    h1,h2{font-family:"Playfair Display",serif;font-weight:500;letter-spacing:-.035em}
+    h1{font-size:clamp(48px,6.6vw,92px);line-height:.99;max-width:680px}
+    h1 span{color:var(--gold);font-style:italic}
+    .hero-copy p{color:var(--muted);line-height:1.85;font-size:14px;max-width:460px;margin:25px 0 31px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-note{display:flex;align-items:center;gap:13px;margin-top:54px;color:var(--muted);font-size:11px}
+    .note-line{height:1px;width:48px;background:var(--gold)}
+    .hero-art{position:relative;min-height:480px;display:grid;place-items:center}
+    .orb{position:absolute;width:min(43vw,520px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(230,189,116,.25);box-shadow:0 0 100px rgba(56,108,139,.13),inset 0 0 80px rgba(230,189,116,.035);animation:orbPulse 6s ease-in-out infinite}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.07);border-radius:50%;inset:7%}
+    .orb:after{inset:16%;border-color:rgba(230,189,116,.11)}
+    .fish-img{width:min(48vw,600px);max-height:520px;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 25px 50px rgba(0,0,0,.6));animation:floatFish 6s ease-in-out infinite;mix-blend-mode:screen}
+    .art-label{position:absolute;bottom:7%;right:1%;z-index:3;border:1px solid var(--line);background:rgba(8,11,16,.72);backdrop-filter:blur(12px);padding:15px 19px;border-radius:13px}
+    .art-label strong{display:block;font-family:"Playfair Display",serif;font-size:20px;font-weight:500}
+    .art-label span{color:var(--muted);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+    .scroll-indicator{position:absolute;bottom:24px;left:clamp(20px,8vw,120px);font-size:9px;letter-spacing:.25em;color:#7f8792;display:flex;align-items:center;gap:12px}
+    .scroll-indicator:before{content:"";height:35px;width:1px;background:linear-gradient(var(--gold),transparent)}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#0c1118}
+    .ticker-track{display:flex;width:max-content;animation:marquee 28s linear infinite;padding:18px 0;gap:30px;color:#c6cbd0;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+    .ticker-track span{display:flex;align-items:center;gap:30px}.ticker-track b{color:var(--gold);font-size:15px}
+    section.content{padding:110px clamp(20px,8vw,120px)}
+    .section-top{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+    .section-top h2{font-size:clamp(34px,4.4vw,58px);line-height:1.1;margin-top:15px}
+    .section-top p{max-width:360px;color:var(--muted);font-size:13px;line-height:1.8}
+    .collections{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .collection-card{position:relative;min-height:400px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#18212c,#0d1117);padding:30px;display:flex;align-items:end;isolation:isolate;transition:transform .4s,border-color .4s}
+    .collection-card:hover{transform:translateY(-7px);border-color:rgba(230,189,116,.5)}
+    .collection-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,7,10,.96),rgba(5,7,10,.1) 70%);z-index:-1}
+    .collection-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.78;transition:transform .7s}
+    .collection-card:hover img{transform:scale(1.06)}
+    .card-kicker{font-size:10px;color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px}
+    .collection-card h3{font-family:"Playfair Display",serif;font-size:36px;font-weight:500;margin-bottom:10px}
+    .collection-card p{color:#c3c9d0;font-size:12px;line-height:1.7;max-width:340px}
+    .card-arrow{position:absolute;right:26px;top:26px;width:42px;height:42px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;font-size:18px;transition:.3s}
+    .collection-card:hover .card-arrow{background:var(--gold);color:var(--bg);border-color:var(--gold);transform:rotate(45deg)}
+    .about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(35px,8vw,110px);align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.015),transparent)}
+    .about-visual{position:relative;min-height:430px;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#111923}
+    .about-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;opacity:.8}
+    .about-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,9,13,.8),transparent 60%)}
+    .visual-caption{position:absolute;bottom:25px;left:25px;z-index:1}
+    .visual-caption strong{font-family:"Playfair Display",serif;font-size:24px;font-weight:500}
+    .visual-caption span{display:block;color:var(--gold);font-size:10px;letter-spacing:.2em;margin-top:5px}
+    .about-copy h2{font-size:clamp(35px,4.3vw,56px);line-height:1.1;margin:14px 0 23px}
+    .about-copy p{font-size:13px;line-height:1.9;color:var(--muted);margin-bottom:15px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+    .value{border-top:1px solid var(--line);padding-top:15px}
+    .value strong{font-family:"Playfair Display",serif;font-size:20px;color:var(--gold);font-weight:500}
+    .value span{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+    .gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:220px 220px;gap:14px}
+    .gallery-item{border-radius:15px;overflow:hidden;position:relative;background:var(--panel);border:1px solid var(--line)}
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:saturate(.9)}
+    .gallery-item:hover img{transform:scale(1.07)}
+    .gallery-item:after{content:attr(data-label);position:absolute;left:17px;bottom:15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 2px 10px #000}
+    .visit{padding-top:20px!important}
+    .visit-panel{display:grid;grid-template-columns:1fr .9fr;gap:40px;border:1px solid var(--line);border-radius:24px;padding:clamp(25px,5vw,60px);background:linear-gradient(120deg,#151d27,#0c1117);position:relative;overflow:hidden}
+    .visit-panel:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-110px;top:-160px;border:1px solid rgba(230,189,116,.2);box-shadow:0 0 0 35px rgba(230,189,116,.025),0 0 0 70px rgba(230,189,116,.02);pointer-events:none}
+    .visit h2{font-size:clamp(35px,4.4vw,56px);margin:15px 0 20px}
+    .visit p{color:var(--muted);font-size:13px;line-height:1.8;max-width:430px}
+    .visit-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .map-card{min-height:270px;border-radius:17px;border:1px solid var(--line);background:radial-gradient(ellipse at 50% 50%,rgba(95,154,200,.15),transparent 55%),linear-gradient(135deg,#18232e,#0b1016);display:grid;place-items:center;text-align:center;padding:25px;position:relative;overflow:hidden}
+    .map-lines{position:absolute;inset:0;opacity:.3;background-image:linear-gradient(35deg,transparent 48%,rgba(255,255,255,.13) 49%,transparent 50%),linear-gradient(125deg,transparent 48%,rgba(255,255,255,.12) 49%,transparent 50%);background-size:70px 70px;mask-image:radial-gradient(ellipse,black,transparent 80%)}
+    .pin{position:relative;z-index:1;width:56px;height:56px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--gold);display:grid;place-items:center;margin:0 auto 25px;box-shadow:0 0 35px rgba(230,189,116,.2)}
+    .pin span{transform:rotate(45deg);font-size:23px;color:#151515}
+    .map-card strong{display:block;position:relative;z-index:1;font-family:"Playfair Display",serif;font-size:23px;font-weight:500}
+    .map-card small{display:block;position:relative;z-index:1;color:var(--muted);font-size:11px;margin-top:8px;line-height:1.6}
+    footer{padding:30px clamp(20px,8vw,120px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px}
+    footer .footer-brand{color:var(--text);letter-spacing:.15em;font-weight:700}
+    .reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes floatFish{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-17px) rotate(1deg)}}
+    @keyframes orbPulse{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.035);opacity:1}}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    @media(max-width:850px){.nav-links{gap:15px}.nav-links a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;padding-top:140px;gap:0}.hero-copy{max-width:700px}.hero-art{min-height:340px;margin-top:5px}.orb{width:min(75vw,410px)}.fish-img{width:min(80vw,460px);max-height:370px}.scroll-indicator{display:none}.section-top{align-items:start;flex-direction:column}.about{grid-template-columns:1fr}.about-visual{min-height:350px}.visit-panel{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}.gallery-item:first-child{grid-row:span 2}.collection-card{min-height:340px}}
+    @media(max-width:560px){.nav{padding:13px 18px}.brand{font-size:10px}.brand-mark{width:33px;height:33px}.menu-btn{display:block}.nav-links{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;padding:20px;background:rgba(8,11,16,.97);border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a:not(.nav-cta){display:block;padding:8px 0}.nav-cta{text-align:center}.hero{padding:120px 22px 45px}.hero h1{font-size:clamp(47px,14vw,72px)}.hero-copy p{font-size:13px}.hero-note{margin-top:32px}.hero-art{min-height:290px}.orb{width:78vw}.fish-img{width:90vw;max-height:310px}.art-label{right:0;bottom:2%;padding:11px 13px}.art-label strong{font-size:16px}.art-label span{font-size:8px}section.content{padding:75px 22px}.collections{grid-template-columns:1fr}.collection-card{min-height:350px;padding:23px}.collection-card h3{font-size:31px}.about-visual{min-height:300px}.values{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:210px 150px 150px;gap:9px}.gallery-item:first-child{grid-row:span 2}.visit-panel{padding:25px 20px}.visit-actions .btn{width:100%}footer{flex-direction:column;align-items:flex-start}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="navbar">
+    <a class="brand" href="#home" aria-label="Slems Betta Flowerhorn beranda">
+      <span class="brand-mark">S</span><span>SLEMS<small>BETTA FLOWERHORN</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Beranda</a><a href="#koleksi">Koleksi</a><a href="#tentang">Tentang</a><a href="#galeri">Galeri</a><a href="#lokasi">Lokasi</a>
+      <a class="nav-cta" href="#lokasi">Temukan Kami ↗</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">A world beneath the water</div>
+        <h1>Keindahan yang<br>hidup dalam <span>warna.</span></h1>
+        <p>Selamat datang di Slems Betta Flowerhorn — tempat pesona ikan hias, karakter unik, dan warna yang memikat bertemu dalam satu pengalaman.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#koleksi">Jelajahi Koleksi <span>↗</span></a>
+          <a class="btn btn-outline" href="#lokasi">Lihat Lokasi</a>
+        </div>
+        <div class="hero-note"><span class="note-line"></span><span>DETAIL KECIL. PESONA LUAR BIASA.</span></div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="orb"></div>
+        <img class="fish-img" src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=1100&q=90" alt="Ikan hias berwarna di dalam air" onerror="this.style.display='none'">
+        <div class="art-label"><strong>Underwater elegance</strong><span>Discover the beauty</span></div>
+      </div>
+      <div class="scroll-indicator">SCROLL TO EXPLORE</div>
+    </section>
+
+    <div class="ticker" aria-label="Jenis ikan hias">
+      <div class="ticker-track">
+        <span>BETTA FISH <b>✳</b> FLOWERHORN <b>✳</b> AQUATIC BEAUTY <b>✳</b> UNIQUE COLORS <b>✳</b> SLEMS COLLECTION <b>✳</b></span>
+        <span>BETTA FISH <b>✳</b> FLOWERHORN <b>✳</b> AQUATIC BEAUTY <b>✳</b> UNIQUE COLORS <b>✳</b> SLEMS COLLECTION <b>✳</b></span>
+      </div>
+    </div>
+
+    <section class="content" id="koleksi">
+      <div class="section-top reveal">
+        <div><div class="eyebrow">Explore the collection</div><h2>Dua karakter.<br>Satu kecintaan.</h2></div>
+        <p>Setiap ikan punya keunikan sendiri. Jelajahi dua jenis ikan hias yang menjadi inspirasi Slems Betta Flowerhorn.</p>
+      </div>
+      <div class="collections">
+        <a class="collection-card reveal" href="#galeri">
+          <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=1100&q=85" alt="Ikan hias di akuarium" loading="lazy">
+          <span class="card-arrow">↗</span><div><div class="card-kicker">01 / Graceful movement</div><h3>Betta Fish</h3><p>Sirip yang anggun, gerakan lembut, dan warna yang menjadikan setiap Betta tampak istimewa.</p></div>
+        </a>
+        <a class="collection-card reveal" href="#galeri">
+          <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=1100&q=85" alt="Pemandangan akuarium ikan" loading="lazy">
+          <span class="card-arrow">↗</span><div><div class="card-kicker">02 / Bold personality</div><h3>Flowerhorn</h3><p>Pesona yang berani, corak yang khas, dan karakter kuat yang mencuri perhatian.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="content about" id="tentang">
+      <div class="about-visual reveal">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85" alt="Suasana dunia bawah air" loading="lazy">
+        <div class="visual-caption"><strong>More than a hobby.</strong><span>A PASSION FOR ORNAMENTAL FISH</span></div>
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">The story of Slems</div>
+        <h2>Berawal dari rasa suka, tumbuh menjadi passion.</h2>
+        <p>Slems Betta Flowerhorn hadir untuk para pencinta ikan hias yang menghargai keindahan, karakter, dan detail di setiap koleksi.</p>
+        <p>Temukan inspirasi untuk koleksi ikan hiasmu, nikmati galeri kami, dan kunjungi lokasi Slems melalui petunjuk Google Maps.</p>
+        <div class="values">
+          <div class="value"><strong>01</strong><span>Keunikan warna</span></div>
+          <div class="value"><strong>02</strong><span>Karakter ikan</span></div>
+          <div class="value"><strong>03</strong><span>Passion aquatik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="galeri">
+      <div class="section-top reveal">
+        <div><div class="eyebrow">Visual diary</div><h2>Pesona dalam<br>setiap detail.</h2></div>
+        <p>Galeri visual bernuansa aquatik sebagai pengantar ke dunia ikan hias Slems Betta Flowerhorn.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" data-label="Aquatic world"><img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=1000&q=85" alt="Ikan hias dalam air" loading="lazy"></div>
+        <div class="gallery-item reveal" data-label="Underwater life"><img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=700&q=85" alt="Akuarium dan kehidupan bawah air" loading="lazy"></div>
+        <div class="gallery-item reveal" data-label="Color & movement"><img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=85" alt="Ikan berenang di akuarium" loading="lazy"></div>
+        <div class="gallery-item reveal" data-label="Aquarium mood"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=700&q=85" alt="Suasana bawah air" loading="lazy"></div>
+        <div class="gallery-item reveal" data-label="Explore the beauty"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=700&q=85" alt="Alam dan air" loading="lazy"></div>
+      </div>
+      <p style="color:var(--muted);font-size:10px;line-height:1.7;margin-top:16px">Catatan: gambar galeri saat ini merupakan gambar ilustrasi dari sumber eksternal, bukan foto terverifikasi dari stok ikan Slems. Ganti dengan foto koleksi asli untuk hasil yang lebih autentik.</p>
+    </section>
+
+    <section class="content visit" id="lokasi">
+      <div class="visit-panel reveal">
+        <div class="visit">
+          <div class="eyebrow">Come and say hello</div>
+          <h2>Temukan lokasi<br><span style="color:var(--gold);font-style:italic">Slems Betta Flowerhorn.</span></h2>
+          <p>Ingin berkunjung langsung? Buka lokasi Slems melalui tautan Google Maps yang disediakan dan ikuti petunjuk arah dari perangkatmu.</p>
+          <div class="visit-actions">
+            <a class="btn" href="https://share.google/SBPL6HKAVxj0QYEBn" target="_blank" rel="noopener noreferrer">Buka Google Maps ↗</a>
+            <a class="btn btn-outline" href="#home">Kembali ke Atas ↑</a>
+          </div>
+        </div>
+        <a class="map-card" href="https://share.google/SBPL6HKAVxj0QYEBn" target="_blank" rel="noopener noreferrer" aria-label="Buka lokasi Slems Betta Flowerhorn di Google Maps">
+          <div class="map-lines"></div>
+          <div><div class="pin"><span>⌖</span></div><strong>Slems Betta Flowerhorn</strong><small>Ketuk untuk membuka tautan lokasi<br>di Google Maps</small></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">SLEMS BETTA FLOWERHORN</div><div>© <span id="year"></span> Slems. Dibuat dengan kecintaan pada ikan hias.</div><a href="#home">Kembali ke atas ↑</a></footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.textContent='☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
